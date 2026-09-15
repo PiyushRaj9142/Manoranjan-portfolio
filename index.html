@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en" class="lenis lenis-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manoranjan Verma — Cinematic Portfolio | Social Media Manager & Video Editor</title>
+  <meta name="description"
+    content="Cinematic portfolio of Manoranjan Verma — Social Media Manager, Video Editor, Content Creator & Cinematographer. Explore brand commercials, event films, album songs, interior showcases and viral reels.">
+  <meta name="keywords"
+    content="Manoranjan Verma, Social Media Manager, Video Editor, Cinematographer, Content Creator, Dainik Bhaskar, Patna, Bihar, Video Production, Reels">
+  <meta property="og:title" content="Manoranjan Verma — Cinematic Portfolio">
+  <meta property="og:description"
+    content="Storytelling that moves the numbers, not just the feed. Interactive cinematic portfolio.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="is-loading">
+
+  <!-- Film Grain Overlay -->
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- Ambient Light Streak Background Canvas -->
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Custom Cinematic Magnetic Cursor -->
+  <div class="custom-cursor" id="custom-cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="cursor-label" id="cursor-label">PLAY</div>
+  </div>
+
+  <!-- ==================================================
+       0–3 SECONDS: CINEMATIC OPENING LOADER
+       ================================================== -->
+  <div id="loader" class="cinematic-loader" aria-label="Loading Experience">
+    <div class="loader-bg"></div>
+    <div class="loader-light-streak"></div>
+    <div class="loader-glow"></div>
+    <div class="loader-content">
+      <div class="loader-timecode">REC ● 00:00:00:00 <span class="fps">24 FPS</span></div>
+      <div class="loader-title-wrap">
+        <span class="loader-sub">A CINEMATIC EXPERIENCE</span>
+        <h1 class="loader-title">MANORANJAN VERMA</h1>
+        <div class="loader-bar-wrap">
+          <div class="loader-progress" id="loader-progress"></div>
+        </div>
+      </div>
+      <div class="loader-meta">
+        <span>INITIALIZING TIMELINE...</span>
+        <span id="loader-percentage">0%</span>
+      </div>
+    </div>
+    <button class="skip-loader-btn" id="skip-loader" aria-label="Enter Showreel">SKIP INTRO [ENTER]</button>
+  </div>
+
+  <!-- ==================================================
+       GLOBAL NAVIGATION HEADER
+       ================================================== -->
+  <header class="cinematic-header" id="site-header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" data-cursor="EXPLORE">
+        <span class="logo-rec">●</span>
+        <span class="logo-name">MANORANJAN</span>
+        <span class="logo-tag">VERMA</span>
+      </a>
+
+      <div class="nav-center-timecode">
+        <span class="time-label">TIMELINE</span>
+        <span class="time-display" id="timecode-clock">00:00:00:00</span>
+      </div>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active" data-cursor="VIEW">HERO</a>
+        <a href="#brand-product" class="nav-link" data-cursor="VIEW">BRAND</a>
+        <a href="#event-celebration" class="nav-link" data-cursor="VIEW">EVENTS</a>
+        <a href="#album-songs" class="nav-link" data-cursor="VIEW">ALBUMS</a>
+        <a href="#interior-videos" class="nav-link" data-cursor="VIEW">INTERIORS</a>
+        <a href="#social-reels" class="nav-link" data-cursor="VIEW">REELS</a>
+        <a href="#brands-experience" class="nav-link" data-cursor="VIEW">BRANDS</a>
+        <a href="#final-cta" class="nav-link" data-cursor="VIEW">CONTACT</a>
+      </nav>
+
+      <div class="nav-controls">
+        <button class="sound-toggle-btn" id="sound-toggle" aria-label="Toggle Sound" title="Toggle Cinematic Sound">
+          <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg class="sound-icon-off" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+          <span class="sound-text">AUDIO</span>
+        </button>
+
+        <a href="tel:+919122959302" class="nav-cta-btn" data-cursor="CALL">
+          <span>+91 91229 59302</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+
+        <button class="mobile-toggle-btn" id="mobile-toggle" aria-label="Open Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Menu -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-inner">
+      <div class="mobile-drawer-header">
+        <span class="mobile-drawer-logo">MANORANJAN VERMA</span>
+        <button class="mobile-close-btn" id="mobile-close" aria-label="Close Menu">✕</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="#hero" class="mobile-link">01 // HERO REVEAL</a>
+        <a href="#about-stats" class="mobile-link">02 // STATS & BIO</a>
+        <a href="#brand-product" class="mobile-link">03 // BRAND & PRODUCT</a>
+        <a href="#event-celebration" class="mobile-link">04 // EVENT & CELEBRATION</a>
+        <a href="#album-songs" class="mobile-link">05 // ALBUM SONG VIDEO</a>
+        <a href="#interior-videos" class="mobile-link">06 // INTERIOR VIDEOS</a>
+        <a href="#social-reels" class="mobile-link">07 // SOCIAL REELS</a>
+        <a href="#services-experience" class="mobile-link">08 // SERVICES & KIT</a>
+        <a href="#brands-experience" class="mobile-link">09 // CLIENTS & BRANDS</a>
+        <a href="#final-cta" class="mobile-link">10 // LET'S TALK</a>
+      </div>
+      <div class="mobile-drawer-footer">
+        <a href="tel:+919122959302" class="mobile-action-btn">CALL: +91 91229 59302</a>
+        <a href="https://wa.me/919122959302" target="_blank" rel="noopener" class="mobile-action-btn secondary">WHATSAPP
+          CHAT</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ==================================================
+         3–9 SECONDS: FULL-SCREEN HERO / PORTFOLIO REVEAL
+         ================================================== -->
+    <section id="hero" class="section-hero">
+      <div class="hero-backdrop-glow"></div>
+
+      <!-- Film Perforation Edge Details -->
+      <div class="perf-strip perf-left" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="perf-strip perf-right" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="hero-container">
+
+        <!-- Massive Kinetic Background Typography -->
+        <div class="hero-bg-typography" aria-hidden="true">
+          <div class="giant-word" id="hero-giant-text">PORTFOLIO</div>
+        </div>
+
+        <!-- Overlapping Center Portrait & Character Mask -->
+        <div class="hero-portrait-stage" id="hero-portrait-stage" data-cursor="DIRECTOR">
+          <div class="portrait-halo"></div>
+          <div class="portrait-frame">
+            <img src="assets/manoranjan-hero.jpg" alt="Manoranjan Verma — Social Media Manager & Video Editor"
+              class="portrait-img" id="hero-portrait-img">
+            <div class="portrait-flare"></div>
+            <div class="portrait-cinema-badge">
+              <span class="badge-dot"></span>
+              <span class="badge-text">DAINIK BHASKAR // SMM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Content Overlay -->
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-accent">SCENE 01 / TAKE 01</span>
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-loc">PATNA, BIHAR, INDIA</span>
+          </div>
+
+          <div class="hero-greeting">
+            <span class="greet-sub">HELLO, I'M</span>
+            <h1 class="hero-name">
+              <span class="name-first">MANORANJAN</span>
+              <span class="name-last">VERMA</span>
+            </h1>
+          </div>
+
+          <!-- Animated Dynamic Roles Banner -->
+          <div class="hero-roles-bar">
+            <div class="roles-label">DISCIPLINES //</div>
+            <div class="roles-ticker-wrap">
+              <div class="roles-ticker-track">
+                <span class="role-chip yellow">SOCIAL MEDIA MANAGER</span>
+                <span class="role-separator">✦</span>
+                <span class="role-chip white">VIDEO EDITOR</span>
+                <span class="role-separator">✦</span>
+                <span class="role-chip red">CONTENT CREATOR</span>
+                <span class="role-separator">✦</span>
+                <span class="role-chip yellow">CINEMATOGRAPHER</span>
+                <span class="role-separator">✦</span>
+                <span class="role-chip white">DAVINCI RESOLVE COLORIST</span>
+                <span class="role-separator">✦</span>
+                <span class="role-chip yellow">SOCIAL MEDIA MANAGER</span>
+                <span class="role-separator">✦</span>
+                <span class="role-chip white">VIDEO EDITOR</span>
+                <span class="role-separator">✦</span>
+                <span class="role-chip red">CONTENT CREATOR</span>
+                <span class="role-separator">✦</span>
+                <span class="role-chip yellow">CINEMATOGRAPHER</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Bottom Controls & Action Callouts -->
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="hero-watch-reel-btn" data-cursor="PLAY REEL"
+              data-video-src="assets/videos/master-showreel.mp4"
+              data-video-title="Manoranjan Verma — Master Cinematographer & Video Editor Showreel"
+              data-video-client="Cinematic Reel" data-video-category="Master Showreel" data-video-duration="01:08"
+              data-video-tags="Cinematography, DaVinci Resolve, Gimbal Direction, Event Production"
+              data-video-image="assets/images/posters/master-showreel.png">
+              <span class="btn-glow"></span>
+              <span class="btn-text">▶ WATCH MASTER SHOWREEL</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+
+            <a href="#brand-product" class="btn btn-outline" data-cursor="EXPLORE">
+              <span class="btn-text">EXPLORE WORK</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+
+            <a href="#final-cta" class="btn btn-outline secondary-outline" data-cursor="CONNECT">
+              <span class="btn-text">LET'S TALK</span>
+              <span class="btn-dot"></span>
+            </a>
+
+            <div class="hero-scroll-cue">
+              <span class="cue-text">SCROLL TO ENTER TIMELINE</span>
+              <div class="cue-mouse">
+                <div class="cue-wheel"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================
+         9–12 SECONDS: PROFESSIONAL INFORMATION & ANIMATED STATS
+         ================================================== -->
+    <section id="about-stats" class="section-stats">
+      <div class="container">
+
+        <div class="stats-top-grid">
+          <div class="stats-bio-col">
+            <div class="section-badge">TIMELINE 00:09 — 00:12</div>
+            <h2 class="stats-heading">
+              <span class="text-white">STORYTELLING THAT MOVES</span>
+              <span class="text-yellow font-condensed">THE NUMBERS, NOT JUST THE FEED.</span>
+            </h2>
+            <p class="stats-lead">
+              I turn a brand's everyday moments into scroll-stopping content — strategy, shoot day, and final export,
+              all under one roof. Managing end-to-end digital presence and high-impact video production.
+            </p>
+
+            <div class="stats-highlight-pill">
+              <div class="pill-icon">🎬</div>
+              <div class="pill-text">
+                <strong>Current Position:</strong> Social Media Manager at <em>Dainik Bhaskar</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-portrait-col">
+            <div class="about-card-frame" data-cursor="VIEW">
+              <img src="assets/manoranjan-about.jpg" alt="Manoranjan Verma on Set" class="about-card-img">
+              <div class="about-card-overlay">
+                <div class="about-card-tag">CREATIVE DIRECTOR // PATNA</div>
+                <div class="about-card-desc">360° Visual Production & Growth Strategy</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Numerical Statistics Grid -->
+        <div class="stats-counter-deck" id="stats-counter-deck">
+
+          <div class="stat-box" data-stat="2">
+            <div class="stat-top">
+              <span class="stat-number" id="stat-1">0</span>
+              <span class="stat-plus">+</span>
+            </div>
+            <div class="stat-bar">
+              <div class="stat-bar-fill"></div>
+            </div>
+            <div class="stat-label">YEARS PROFESSIONAL EXP</div>
+            <div class="stat-sub">High-growth Digital Campaigns</div>
+          </div>
+
+          <div class="stat-box" data-stat="1000">
+            <div class="stat-top">
+              <span class="stat-number" id="stat-2">0</span>
+              <span class="stat-plus">K+</span>
+            </div>
+            <div class="stat-bar">
+              <div class="stat-bar-fill"></div>
+            </div>
+            <div class="stat-label">VIDEOS CREATED & EDITED</div>
+            <div class="stat-sub">Shorts, Reels, Commercials</div>
+          </div>
+
+          <div class="stat-box" data-stat="50">
+            <div class="stat-top">
+              <span class="stat-number" id="stat-3">0</span>
+              <span class="stat-plus">+</span>
+            </div>
+            <div class="stat-bar">
+              <div class="stat-bar-fill"></div>
+            </div>
+            <div class="stat-label">BRANDS & CLIENT PROJECTS</div>
+            <div class="stat-sub">From Newsrooms to Luxury Hospitality</div>
+          </div>
+
+          <div class="stat-box" data-stat="5">
+            <div class="stat-top">
+              <span class="stat-number" id="stat-4">0</span>
+              <span class="stat-plus">PLATFORMS</span>
+            </div>
+            <div class="stat-bar">
+              <div class="stat-bar-fill"></div>
+            </div>
+            <div class="stat-label">PLATFORMS SCALED</div>
+            <div class="stat-sub">Instagram, YouTube, FB, LinkedIn</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================
+         12–21 SECONDS: BRAND & PRODUCT VIDEO
+         ================================================== -->
+    <section id="brand-product" class="section-showcase category-brand">
+      <div class="category-header-banner">
+        <div class="container">
+          <div class="category-meta-line">
+            <span class="meta-tag">TIMELINE 00:12 — 00:21</span>
+            <span class="meta-dot">●</span>
+            <span class="meta-cat">FEATURED WORK CATEGORY 01</span>
+          </div>
+          <h2 class="category-title yellow-impact">
+            BRAND & PRODUCT VIDEO
+          </h2>
+          <p class="category-sub">
+            High-converting promotional campaigns, commercial product cinematography, and brand launch films designed to
+            stop the scroll.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="showcase-grid staggered-grid">
+
+          <!-- Card 1: Dainik Bhaskar Experience -->
+          <article class="video-card card-large" data-direction="left"
+            data-video-src="assets/videos/brand/dainik-bhaskar-intern.mp4"
+            data-video-title="A Day in My Life as an Intern at Dainik Bhaskar"
+            data-video-category="Brand & Workplace Film"
+            data-video-client="Dainik Bhaskar"
+            data-video-duration="00:31"
+            data-video-tags="Creative Direction, Video Editing, Motion Graphics, Workplace Narrative"
+            data-video-image="assets/images/posters/dainik-bhaskar-intern.png"
+            data-cursor="PLAY">
+            <div class="card-media-wrap">
+              <img src="assets/images/posters/dainik-bhaskar-intern.png" alt="Dainik Bhaskar Experience" class="card-thumb"
+                loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/brand/dainik-bhaskar-intern.mp4" type="video/mp4">
+              </video>
+              <div class="card-glow"></div>
+              <div class="card-play-badge">
+                <span class="play-triangle">▶</span>
+                <span class="play-ring"></span>
+              </div>
+              <div class="card-time-badge">00:31</div>
+            </div>
+            <div class="card-info">
+              <div class="card-meta">
+                <span class="card-client-tag">DAINIK BHASKAR</span>
+                <span class="card-type-tag">WORKPLACE & BRAND</span>
+              </div>
+              <h3 class="card-title">Transforming Newsroom Moments into High-Engagement Digital Storytelling</h3>
+              <p class="card-desc">End-to-end creative direction, camera supervision, color grading in DaVinci Resolve,
+                and viral workplace deployment.</p>
+            </div>
+          </article>
+
+          <!-- Card 2: Bihar AI Summit 2026 Tech Promo -->
+          <article class="video-card" data-direction="right"
+            data-video-src="assets/videos/brand/bihar-ai-summit.mp4"
+            data-video-title="Bihar AI Summit 2026 — Official Tech Commercial & Promo"
+            data-video-category="Corporate & Tech Promo"
+            data-video-client="Bihar AI Summit / QLASS"
+            data-video-duration="00:58"
+            data-video-tags="Corporate Commercial, Tech Cinematography, DaVinci Resolve, Motion Design"
+            data-video-image="assets/images/posters/bihar-ai-summit.png"
+            data-cursor="PLAY">
+            <div class="card-media-wrap">
+              <img src="assets/images/posters/bihar-ai-summit.png" alt="Bihar AI Summit 2026 Promo" class="card-thumb"
+                loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/brand/bihar-ai-summit.mp4" type="video/mp4">
+              </video>
+              <div class="card-glow"></div>
+              <div class="card-play-badge">
+                <span class="play-triangle">▶</span>
+                <span class="play-ring"></span>
+              </div>
+              <div class="card-time-badge">00:58</div>
+            </div>
+            <div class="card-info">
+              <div class="card-meta">
+                <span class="card-client-tag">BIHAR AI SUMMIT 2026</span>
+                <span class="card-type-tag">TECH PROMO</span>
+              </div>
+              <h3 class="card-title">Accelerating Responsible AI: Grand Summit Media Campaign</h3>
+              <p class="card-desc">Sleek stage framing, dynamic speaker lighting, fast-paced editing, and high-impact sound
+                design.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: Sunny Deol & Karan Deol Promotions -->
+          <article class="video-card" data-direction="bottom"
+            data-video-src="assets/videos/brand/sunny-deol-promotion.mp4"
+            data-video-title="Sunny Deol & Karan Deol — Patna Batwara Promotions"
+            data-video-category="Celebrity & Film Campaign"
+            data-video-client="Batwara Promotions / Sunny Deol"
+            data-video-duration="00:48"
+            data-video-tags="Celebrity Media, Press Cinematography, Color Science, Audio Scoring"
+            data-video-image="assets/images/posters/sunny-deol-event.png"
+            data-cursor="PLAY">
+            <div class="card-media-wrap">
+              <img src="assets/images/posters/sunny-deol-event.png" alt="Sunny Deol Batwara Promotion" class="card-thumb"
+                loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/brand/sunny-deol-promotion.mp4" type="video/mp4">
+              </video>
+              <div class="card-glow"></div>
+              <div class="card-play-badge">
+                <span class="play-triangle">▶</span>
+                <span class="play-ring"></span>
+              </div>
+              <div class="card-time-badge">00:48</div>
+            </div>
+            <div class="card-info">
+              <div class="card-meta">
+                <span class="card-client-tag">BATWARA PROMOTIONS</span>
+                <span class="card-type-tag">CELEBRITY CAMPAIGN</span>
+              </div>
+              <h3 class="card-title">Star Power in Patna: Celebrity Press & Promotional Campaign</h3>
+              <p class="card-desc">Cinematic framing, rhythm-driven montage, low-light bokeh, and voiceover timing for high-profile star releases.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         21–27 SECONDS: EVENT & CELEBRATION VIDEO
+         ================================================== -->
+    <section id="event-celebration" class="section-showcase category-event">
+      <!-- Continuous Animated Diagonal Lines Background -->
+      <div class="diagonal-lines-canvas" aria-hidden="true">
+        <div class="diag-line diag-1"></div>
+        <div class="diag-line diag-2"></div>
+        <div class="diag-line diag-3"></div>
+        <div class="diag-line diag-4"></div>
+      </div>
+
+      <div class="category-header-banner">
+        <div class="container">
+          <div class="category-meta-line">
+            <span class="meta-tag">TIMELINE 00:21 — 00:27</span>
+            <span class="meta-dot">●</span>
+            <span class="meta-cat">FEATURED WORK CATEGORY 02</span>
+          </div>
+          <h2 class="category-title yellow-impact">
+            EVENT & CELEBRATION VIDEO
+          </h2>
+          <p class="category-sub">
+            Capturing the pulse of luxury galas, grand corporate summits, cultural festivals, and unforgettable
+            celebrations.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="event-floating-layout">
+
+          <!-- Event Item 1: Bihar Ke Gaurav Season 3 Gala -->
+          <article class="event-card event-card-1" data-parallax="0.15"
+            data-video-src="assets/videos/events/bihar-ke-gaurav.mp4"
+            data-video-title="Bihar Ke Gaurav Season 3 — Grand State Gala & Awards"
+            data-video-category="State Gala & Awards"
+            data-video-client="Bihar Ke Gaurav Season 3"
+            data-video-duration="00:59"
+            data-video-tags="Red Carpet, Banquet Cinematography, Low Light Bokeh, Sound Scoring"
+            data-video-image="assets/images/posters/bihar-ke-gaurav.png"
+            data-cursor="PLAY">
+            <div class="card-media-wrap">
+              <img src="assets/images/posters/bihar-ke-gaurav.png" alt="Bihar Ke Gaurav Season 3 Gala" class="card-thumb"
+                loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/events/bihar-ke-gaurav.mp4" type="video/mp4">
+              </video>
+              <div class="card-glow red-glow"></div>
+              <div class="card-play-badge">
+                <span class="play-triangle">▶</span>
+              </div>
+              <div class="event-badge-overlay">BIHAR KE GAURAV S3</div>
+            </div>
+            <div class="event-content-box">
+              <span class="event-category">AWARDS & STATE GALA</span>
+              <h3 class="event-title">Annual State Honors & High-Profile Banquet Coverage</h3>
+            </div>
+          </article>
+
+          <!-- Event Item 2: Bihar AI Summit Grand Stage & Keynote -->
+          <article class="event-card event-card-2" data-parallax="-0.1"
+            data-video-src="assets/videos/events/bihar-ai-summit.mp4"
+            data-video-title="Bihar AI Summit 2026 — Grand Keynote & Live Production"
+            data-video-category="Concert & Stage"
+            data-video-client="Bihar AI Summit / BIA / QLASS"
+            data-video-duration="00:58"
+            data-video-tags="Live Stage, Keynote Production, Multicam Sync, Lighting Setup"
+            data-video-image="assets/images/posters/bihar-ai-summit.png"
+            data-cursor="PLAY">
+            <div class="card-media-wrap">
+              <img src="assets/images/posters/bihar-ai-summit.png" alt="Bihar AI Summit Stage" class="card-thumb"
+                loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/events/bihar-ai-summit.mp4" type="video/mp4">
+              </video>
+              <div class="card-glow red-glow"></div>
+              <div class="card-play-badge">
+                <span class="play-triangle">▶</span>
+              </div>
+              <div class="event-badge-overlay">BIHAR AI SUMMIT</div>
+            </div>
+            <div class="event-content-box">
+              <span class="event-category">LIVE STAGE & KEYNOTE</span>
+              <h3 class="event-title">High-Energy Summit Coverage & 2000+ Audience Immersion</h3>
+            </div>
+          </article>
+
+          <!-- Event Item 3: Sunny Deol & Karan Deol Press & Fan Gala -->
+          <article class="event-card event-card-3" data-parallax="0.2"
+            data-video-src="assets/videos/events/sunny-deol-event.mp4"
+            data-video-title="Sunny Deol & Karan Deol Patna Press Meet & Fan Gala"
+            data-video-category="Celebrity & Press"
+            data-video-client="Batwara Film / Event Media"
+            data-video-duration="00:48"
+            data-video-tags="Celebrity Media, 4K Gimbal, Event Storytelling, Sound Scoring"
+            data-video-image="assets/images/posters/sunny-deol-event.png"
+            data-cursor="PLAY">
+            <div class="card-media-wrap">
+              <img src="assets/images/posters/sunny-deol-event.png" alt="Sunny Deol Patna Press Event" class="card-thumb" loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/events/sunny-deol-event.mp4" type="video/mp4">
+              </video>
+              <div class="card-glow red-glow"></div>
+              <div class="card-play-badge">
+                <span class="play-triangle">▶</span>
+              </div>
+              <div class="event-badge-overlay">CELEBRITY PRESS GALA</div>
+            </div>
+            <div class="event-content-box">
+              <span class="event-category">GRAND CELEBRATIONS</span>
+              <h3 class="event-title">Bollywood Star Reception & Exclusive Press Conference Film</h3>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         27–31 SECONDS: CINEMATIC 3D SECTION TRANSITION
+         ================================================== -->
+    <section class="section-transition-strip" aria-label="Section Transition">
+      <div class="transition-light-beam"></div>
+      <div class="transition-marquee-wrap">
+        <div class="transition-marquee-track">
+          <span class="marquee-item stroke">DIRECTING THE VISION</span>
+          <span class="marquee-bullet">✦</span>
+          <span class="marquee-item solid">FRAME BY FRAME</span>
+          <span class="marquee-bullet">✦</span>
+          <span class="marquee-item stroke">VISUAL IMPACT</span>
+          <span class="marquee-bullet">✦</span>
+          <span class="marquee-item solid">CINEMATIC EXCELLENCE</span>
+          <span class="marquee-bullet">✦</span>
+          <span class="marquee-item stroke">DIRECTING THE VISION</span>
+          <span class="marquee-bullet">✦</span>
+          <span class="marquee-item solid">FRAME BY FRAME</span>
+        </div>
+      </div>
+      <div class="transition-subtext">
+        <span>TIMELINE 00:27 — 00:31</span>
+        <span>// ENTERING MUSIC & NARRATIVE ARCHIVE</span>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         31–35 SECONDS: ALBUM SONG VIDEO
+         ================================================== -->
+    <section id="album-songs" class="section-showcase category-album">
+      <div class="category-header-banner">
+        <div class="container">
+          <div class="category-meta-line">
+            <span class="meta-tag">TIMELINE 00:31 — 00:35</span>
+            <span class="meta-dot">●</span>
+            <span class="meta-cat">FEATURED WORK CATEGORY 03</span>
+          </div>
+          <h2 class="category-title yellow-impact">
+            ALBUM SONG VIDEO
+          </h2>
+          <p class="category-sub">
+            Music video direction, moody cinematic color science, beat-synchronized cuts, and evocative narrative
+            filmmaking.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="album-cards-deck">
+
+          <!-- Album Card 1: Papon Live Concert Film -->
+          <div class="album-card card-scale-fade" data-anim="scale-fade"
+            data-video-src="assets/videos/albums/papon-bihar-diwas.mp4"
+            data-video-title="PAPON Live in Concert — Bihar Diwas 2026 Official Film"
+            data-video-category="Live Concert & Music Video"
+            data-video-client="Bihar Diwas / Artist Production"
+            data-video-duration="00:56"
+            data-video-tags="Live Concert, Stage Lighting, DaVinci Resolve, Multitrack Sound"
+            data-video-image="assets/images/posters/papon-concert.png"
+            data-cursor="PLAY">
+            <div class="album-media-frame">
+              <img src="assets/images/posters/papon-concert.png" alt="PAPON Live in Concert" class="album-thumb"
+                loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/albums/papon-bihar-diwas.mp4" type="video/mp4">
+              </video>
+              <div class="album-vibe-overlay"></div>
+              <div class="audio-bars-animation">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="card-play-badge">
+                <span class="play-triangle">▶</span>
+              </div>
+            </div>
+            <div class="album-info-bar">
+              <div class="album-track-no">TRACK 01</div>
+              <h3 class="album-track-title">PAPON Live: Soulful Stage Performance & Arena Production</h3>
+              <p class="album-track-artist">Live Concert Cinematography & Stage Multicam</p>
+            </div>
+          </div>
+
+          <!-- Album Card 2: Narrative & Cinematography Series -->
+          <div class="album-card card-slide-right" data-anim="slide-right"
+            data-video-src="assets/videos/albums/cinematic-narrative.mp4"
+            data-video-title="Cinematic Narrative & Stage Direction Showcase"
+            data-video-category="Narrative & Music"
+            data-video-client="Talk With Tutu Collaboration"
+            data-video-duration="01:08"
+            data-video-tags="Portrait Cinematography, Sound Design, Mood Lighting, Beat Sync"
+            data-video-image="assets/images/posters/master-showreel.png"
+            data-cursor="PLAY">
+            <div class="album-media-frame">
+              <img src="assets/images/posters/master-showreel.png" alt="Cinematic Narrative Film" class="album-thumb" loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/albums/cinematic-narrative.mp4" type="video/mp4">
+              </video>
+              <div class="album-vibe-overlay"></div>
+              <div class="audio-bars-animation">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="card-play-badge">
+                <span class="play-triangle">▶</span>
+              </div>
+            </div>
+            <div class="album-info-bar">
+              <div class="album-track-no">TRACK 02</div>
+              <h3 class="album-track-title">Beat-Synced Narrative & Visual Filmmaking Series</h3>
+              <p class="album-track-artist">@talk_with_tutu Creative Collaboration</p>
+            </div>
+          </div>
+
+          <!-- Album Card 3: Bihar Diwas Grand Arena Finale -->
+          <div class="album-card card-slide-bottom" data-anim="slide-bottom"
+            data-video-src="assets/videos/albums/papon-bihar-diwas.mp4"
+            data-video-title="Papon Grand Musical Finale — Bihar Diwas Arena"
+            data-video-category="Music Video & Concert"
+            data-video-client="Patna Live Production"
+            data-video-duration="00:56"
+            data-video-tags="60fps High Speed, Dynamic Tracking, Fast Beat Cuts"
+            data-video-image="assets/images/posters/papon-concert.png"
+            data-cursor="PLAY">
+            <div class="album-media-frame">
+              <img src="assets/images/posters/papon-concert.png" alt="Grand Arena Finale" class="album-thumb" loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/albums/papon-bihar-diwas.mp4" type="video/mp4">
+              </video>
+              <div class="album-vibe-overlay"></div>
+              <div class="audio-bars-animation">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="card-play-badge">
+                <span class="play-triangle">▶</span>
+              </div>
+            </div>
+            <div class="album-info-bar">
+              <div class="album-track-no">TRACK 03</div>
+              <h3 class="album-track-title">Grand Arena Stage Atmosphere & Musical Immersion</h3>
+              <p class="album-track-artist">Patna Bihar Diwas Live Production</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         35–39 SECONDS: INTERIOR VIDEOS (PARALLAX GALLERY)
+         ================================================== -->
+    <section id="interior-videos" class="section-showcase category-interior">
+      <div class="category-header-banner sticky-header-banner">
+        <div class="container">
+          <div class="category-meta-line">
+            <span class="meta-tag">TIMELINE 00:35 — 00:39</span>
+            <span class="meta-dot">●</span>
+            <span class="meta-cat">FEATURED WORK CATEGORY 04</span>
+          </div>
+          <h2 class="category-title yellow-impact">
+            INTERIOR VIDEOS
+          </h2>
+          <p class="category-sub">
+            Capturing the architectural soul, ambient luxury, and spatial elegance of cafes, restaurants, and premium
+            hotels.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="interior-parallax-deck">
+
+          <!-- Tall Vertical 1: Luxury Resort & Villa Architectural Tour -->
+          <div class="interior-column col-slow" data-speed="0.8">
+            <article class="interior-card card-tall"
+              data-video-src="assets/videos/interiors/resort-architecture.mp4"
+              data-video-title="Luxury Villa & Resort Architectural Tour — Ambience & Nature"
+              data-video-category="Interior & Architectural Film"
+              data-video-client="Luxury Villa Resort"
+              data-video-duration="00:28"
+              data-video-tags="Warm Lighting, Architecture, Smooth Gimbal Dolly, Lush Landscapes"
+              data-video-image="assets/images/posters/resort-architecture.png"
+              data-cursor="PLAY">
+              <div class="interior-img-wrap">
+                <img src="assets/images/posters/resort-architecture.png" alt="Luxury Villa Resort Interior & Exterior" class="interior-img"
+                  loading="lazy">
+                <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                  <source src="assets/videos/interiors/resort-architecture.mp4" type="video/mp4">
+                </video>
+                <div class="interior-badge">LUXURY RESORT & VILLA</div>
+                <div class="card-play-badge">
+                  <span class="play-triangle">▶</span>
+                </div>
+              </div>
+              <div class="interior-caption">
+                <span class="interior-loc">BIHAR, INDIA</span>
+                <h3 class="interior-name">Resort Grand Grounds & Architectural Suite Experience</h3>
+                <p class="interior-details">Lush green pathways, evening garden lanterns, wooden architectural facades, and smooth motion.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Tall Vertical 2: Go-Karting Arena & Venue Tour -->
+          <div class="interior-column col-fast" data-speed="1.25">
+            <article class="interior-card card-tall"
+              data-video-src="assets/videos/interiors/gokarting-arena.mp4"
+              data-video-title="Go-Karting Arena & Entertainment Complex — Venue Showcase"
+              data-video-category="Commercial Space & Entertainment"
+              data-video-client="Go-Karting Arena Patna"
+              data-video-duration="00:26"
+              data-video-tags="Track Cinematography, Wide Angles, Dynamic Tracking"
+              data-video-image="assets/images/posters/gokarting-viral.png"
+              data-cursor="PLAY">
+              <div class="interior-img-wrap">
+                <img src="assets/images/posters/gokarting-viral.png" alt="Go-Karting Arena" class="interior-img"
+                  loading="lazy">
+                <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                  <source src="assets/videos/interiors/gokarting-arena.mp4" type="video/mp4">
+                </video>
+                <div class="interior-badge">GO-KARTING ARENA</div>
+                <div class="card-play-badge">
+                  <span class="play-triangle">▶</span>
+                </div>
+              </div>
+              <div class="interior-caption">
+                <span class="interior-loc">PATNA, BIHAR</span>
+                <h3 class="interior-name">Speedway Arena & Outdoor Action Space Showcase</h3>
+                <p class="interior-details">Panoramic track angles, tire barrier dynamics, and high-energy venue motion.</p>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         39–42 SECONDS: SOCIAL MEDIA REELS
+         ================================================== -->
+    <section id="social-reels" class="section-showcase category-reels">
+      <div class="category-header-banner">
+        <div class="container">
+          <div class="category-meta-line">
+            <span class="meta-tag">TIMELINE 00:39 — 00:42</span>
+            <span class="meta-dot">●</span>
+            <span class="meta-cat">FEATURED WORK CATEGORY 05</span>
+          </div>
+          <h2 class="category-title yellow-impact">
+            SOCIAL MEDIA REELS & VIRAL SHORTS
+          </h2>
+          <p class="category-sub">
+            Vertical 9:16 smartphone-native reels, trending hooks, rapid viral edits, and engaging micro-content built
+            to dominate feeds.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="reels-deck-wrapper">
+
+          <!-- Reel Card 1: Go-Karting Viral Reel -->
+          <div class="reel-card-wrap tilt-reel-card" data-rotate="-3"
+            data-video-src="assets/videos/reels/gokarting-viral.mp4"
+            data-video-title="Cafes Are Overrated: High-Energy Go-Karting Reel"
+            data-video-category="Viral Lifestyle Reel"
+            data-video-client="Talk With Tutu / Lifestyle"
+            data-video-duration="00:26"
+            data-video-tags="1.2M+ Views, Kinetic Typography, Trending Audio, Fast Edits"
+            data-video-image="assets/images/posters/gokarting-viral.png"
+            data-cursor="PLAY REEL">
+            <div class="reel-card-body">
+              <div class="reel-phone-notch"></div>
+              <img src="assets/images/posters/gokarting-viral.png" alt="Go-Karting Viral Reel" class="reel-thumb" loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/reels/gokarting-viral.mp4" type="video/mp4">
+              </video>
+              <div class="reel-overlay-content">
+                <div class="reel-stats-tag">
+                  <span class="fire-emoji">🔥</span>
+                  <span>1.2M VIEWS</span>
+                </div>
+                <div class="reel-cta-badge">PLAY REEL</div>
+              </div>
+            </div>
+            <div class="reel-title-under">Cafes Are Overrated — Go-Karting Viral</div>
+          </div>
+
+          <!-- Reel Card 2: A Day in My Life at Dainik Bhaskar -->
+          <div class="reel-card-wrap tilt-reel-card" data-rotate="2"
+            data-video-src="assets/videos/reels/dainik-bhaskar-day.mp4"
+            data-video-title="A Day in My Life as an Intern at Dainik Bhaskar"
+            data-video-category="Workplace & Vlog Reel"
+            data-video-client="Dainik Bhaskar / Creator"
+            data-video-duration="00:31"
+            data-video-tags="Workplace Narrative, Day In The Life, Smooth Transitions, Viral Hook"
+            data-video-image="assets/images/posters/dainik-bhaskar-intern.png"
+            data-cursor="PLAY REEL">
+            <div class="reel-card-body">
+              <div class="reel-phone-notch"></div>
+              <img src="assets/images/posters/dainik-bhaskar-intern.png" alt="Dainik Bhaskar Workplace Reel" class="reel-thumb" loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/reels/dainik-bhaskar-day.mp4" type="video/mp4">
+              </video>
+              <div class="reel-overlay-content">
+                <div class="reel-stats-tag">
+                  <span class="rec-dot">●</span>
+                  <span>DAINIK BHASKAR</span>
+                </div>
+                <div class="reel-cta-badge">PLAY REEL</div>
+              </div>
+            </div>
+            <div class="reel-title-under">Dainik Bhaskar Intern Day in Life</div>
+          </div>
+
+          <!-- Reel Card 3: Bhojpuri Industry Street Culture Viral -->
+          <div class="reel-card-wrap tilt-reel-card" data-rotate="-2"
+            data-video-src="assets/videos/reels/bhojpuri-street-viral.mp4"
+            data-video-title="Bhojpuri Industry Street Culture & Public Hype Reel"
+            data-video-category="Street Culture & Viral Reel"
+            data-video-client="Talk With Tutu / Street Media"
+            data-video-duration="00:26"
+            data-video-tags="Street Energy, Crowd Dynamics, Trending Sound, Viral Caption"
+            data-video-image="assets/images/posters/bhojpuri-street-viral.png"
+            data-cursor="PLAY REEL">
+            <div class="reel-card-body">
+              <div class="reel-phone-notch"></div>
+              <img src="assets/images/posters/bhojpuri-street-viral.png" alt="Bhojpuri Street Culture Reel" class="reel-thumb"
+                loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/reels/bhojpuri-street-viral.mp4" type="video/mp4">
+              </video>
+              <div class="reel-overlay-content">
+                <div class="reel-stats-tag">
+                  <span class="fire-emoji">✨</span>
+                  <span>VIRAL STREET</span>
+                </div>
+                <div class="reel-cta-badge">PLAY REEL</div>
+              </div>
+            </div>
+            <div class="reel-title-under">Bhojpuri Street Crowd & Public Pulse</div>
+          </div>
+
+          <!-- Reel Card 4: Cinematographer On Set & Gimbal Rig Breakdown -->
+          <div class="reel-card-wrap tilt-reel-card" data-rotate="3"
+            data-video-src="assets/videos/reels/bts-cinematography.mp4"
+            data-video-title="Cinematographer On Set & Gimbal Rig Breakdown"
+            data-video-category="BTS & Filmmaking Reel"
+            data-video-client="Manoranjan Verma / Production"
+            data-video-duration="01:08"
+            data-video-tags="Gimbal Rig, Live Production, Stage Setup, BTS Filmmaking"
+            data-video-image="assets/images/posters/master-showreel.png"
+            data-cursor="PLAY REEL">
+            <div class="reel-card-body">
+              <div class="reel-phone-notch"></div>
+              <img src="assets/images/posters/master-showreel.png" alt="Cinematography BTS Reel" class="reel-thumb"
+                loading="lazy">
+              <video class="card-video-bg" muted loop playsinline webkit-playsinline preload="none">
+                <source src="assets/videos/reels/bts-cinematography.mp4" type="video/mp4">
+              </video>
+              <div class="reel-overlay-content">
+                <div class="reel-stats-tag">
+                  <span class="fire-emoji">🏆</span>
+                  <span>BTS ON SET</span>
+                </div>
+                <div class="reel-cta-badge">PLAY REEL</div>
+              </div>
+            </div>
+            <div class="reel-title-under">Cinematography BTS & Stage Rig</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SERVICES & CORE DISCIPLINES
+         ================================================== -->
+    <section id="services-experience" class="section-services">
+      <div class="container">
+
+        <div class="section-header-centered">
+          <div class="section-badge">END-TO-END CAPABILITIES</div>
+          <h2 class="section-big-title">
+            FOUR DISCIPLINES, <span class="text-yellow">ONE CONSISTENT CREATIVE VOICE</span>
+          </h2>
+          <p class="section-lead-centered">
+            From strategic content planning and shoot day cinematography to high-end DaVinci color grading and
+            multi-platform distribution.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- Discipline 1: Social Media Management -->
+          <div class="service-card" data-cursor="DISCIPLINE">
+            <div class="service-number">01</div>
+            <div class="service-icon-box">📱</div>
+            <h3 class="service-title">Social Media Management</h3>
+            <p class="service-desc">Strategic growth, trend forecasting, and active audience engagement across all
+              digital touchpoints.</p>
+            <ul class="service-list">
+              <li>Social Media Strategy & Roadmaps</li>
+              <li>Content Calendar & Scheduling</li>
+              <li>Audience Growth & Community Building</li>
+              <li>Performance Analytics & Optimization</li>
+            </ul>
+          </div>
+
+          <!-- Discipline 2: Content Creation -->
+          <div class="service-card" data-cursor="DISCIPLINE">
+            <div class="service-number">02</div>
+            <div class="service-icon-box">⚡</div>
+            <h3 class="service-title">Content Creation</h3>
+            <p class="service-desc">Scroll-stopping micro-content, corporate storytelling, and lifestyle shoots
+              engineered for shareability.</p>
+            <ul class="service-list">
+              <li>Reels & Short-Form Video Production</li>
+              <li>Corporate Event & Summit Coverage</li>
+              <li>Brand Promotional Films</li>
+              <li>Product Photography & Shoots</li>
+            </ul>
+          </div>
+
+          <!-- Discipline 3: Video Production & Editing -->
+          <div class="service-card featured-service-card" data-cursor="DISCIPLINE">
+            <div class="service-number">03</div>
+            <div class="service-icon-box">🎬</div>
+            <h3 class="service-title">Video Production & Post</h3>
+            <p class="service-desc">Broadcast-grade cinematography, precision editing, color science, and dynamic motion
+              graphics.</p>
+            <ul class="service-list">
+              <li>Cinematography & Multi-cam Direction</li>
+              <li>DaVinci Resolve Color Grading</li>
+              <li>Sound Design & Frequency Mixing</li>
+              <li>YouTube Long-form & Reels Editing</li>
+            </ul>
+          </div>
+
+          <!-- Discipline 4: Digital Marketing -->
+          <div class="service-card" data-cursor="DISCIPLINE">
+            <div class="service-number">04</div>
+            <div class="service-icon-box">📈</div>
+            <h3 class="service-title">Digital Marketing</h3>
+            <p class="service-desc">Positioning brands with strong visual identity, organic growth tactics, and
+              compelling copywriting.</p>
+            <ul class="service-list">
+              <li>Brand Positioning & Strategy</li>
+              <li>Viral Campaign Execution</li>
+              <li>Creative Copywriting & Scripts</li>
+              <li>Cross-platform Brand Consistency</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- The Kit & Software Suite -->
+        <div class="kit-banner">
+          <div class="kit-label">THE KIT BEHIND THE CUTS //</div>
+          <div class="kit-pills">
+            <span class="kit-pill highlight">DaVinci Resolve Studio</span>
+            <span class="kit-pill">Adobe Premiere Pro</span>
+            <span class="kit-pill">Adobe After Effects</span>
+            <span class="kit-pill">Sony Cinema Line / Alpha</span>
+            <span class="kit-pill">DJI Ronin Gimbal Systems</span>
+            <span class="kit-pill">Wireless Audio & Lavalier</span>
+            <span class="kit-pill">Studio Lighting Rigs</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================
+         BRANDS, CLIENTS & CURRENT ROLE
+         ================================================== -->
+    <section id="brands-experience" class="section-brands">
+      <div class="container">
+
+        <!-- Current Organization Slate Card -->
+        <div class="slate-role-card">
+          <div class="slate-header-strip">
+            <span class="slate-tag">CURRENTLY ROLLING</span>
+            <span class="slate-time">2023 — PRESENT</span>
+          </div>
+          <div class="slate-content">
+            <div class="slate-logo-col">
+              <img src="assets/logos/dainik-bhaskar.png" alt="Dainik Bhaskar Logo" class="slate-org-logo">
+              <div class="slate-badge">LEADING HINDI DAILY & DIGITAL NETWORK</div>
+            </div>
+            <div class="slate-details-col">
+              <h3 class="slate-position">Social Media Manager</h3>
+              <p class="slate-org-desc">
+                Managing complete digital presence, directing viral news & lifestyle campaigns, covering major summits,
+                and executing high-volume daily video production with consistency and high engagement.
+              </p>
+              <div class="slate-skills-row">
+                <span>Social Strategy</span>
+                <span>Event Production</span>
+                <span>Video Editing</span>
+                <span>Creative Copy</span>
+                <span>Performance Optimization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brands Marquee & Collaborations -->
+        <div class="brands-section-header">
+          <div class="section-badge">PROVEN TRACK RECORD</div>
+          <h2 class="brands-heading">
+            NEWSROOMS, HOSPITALITY, TECH &amp; <span class="text-yellow">HOMEGROWN BUSINESSES</span>
+          </h2>
+          <p class="brands-sub">
+            Trusted by diverse organizations to shape their digital identity and tell unforgettable stories.
+          </p>
+        </div>
+
+        <!-- Interactive Brand Logos Wall -->
+        <div class="brand-logos-deck">
+
+          <div class="brand-item" title="Dainik Bhaskar">
+            <img src="assets/logos/dainik-bhaskar.png" alt="Dainik Bhaskar">
+            <span class="brand-name">Dainik Bhaskar</span>
+          </div>
+
+          <div class="brand-item" title="Hotel Maurya Patna">
+            <img src="assets/logos/hotel-maurya.png" alt="Hotel Maurya">
+            <span class="brand-name">Hotel Maurya</span>
+          </div>
+
+          <div class="brand-item" title="Vivo Bihar">
+            <img src="assets/logos/vivo.svg" alt="Vivo">
+            <span class="brand-name">Vivo Bihar</span>
+          </div>
+
+          <div class="brand-item" title="Tufcon XT">
+            <img src="assets/logos/tufcon.png" alt="Tufcon XT">
+            <span class="brand-name">Tufcon XT</span>
+          </div>
+
+          <div class="brand-item" title="Varmora">
+            <img src="assets/logos/varmora.png" alt="Varmora">
+            <span class="brand-name">Varmora</span>
+          </div>
+
+          <div class="brand-item" title="Chartered Commerce">
+            <img src="assets/logos/chartered-commerce.png" alt="Chartered Commerce">
+            <span class="brand-name">Chartered Commerce</span>
+          </div>
+
+          <div class="brand-item" title="SBI">
+            <img src="assets/logos/sbi.png" alt="State Bank of India">
+            <span class="brand-name">SBI</span>
+          </div>
+
+          <div class="brand-item" title="Foodpanda">
+            <img src="assets/logos/foodpanda.svg" alt="Foodpanda">
+            <span class="brand-name">Food Panda</span>
+          </div>
+
+          <div class="brand-item" title="Stracomm Global">
+            <img src="assets/logos/stracomm.png" alt="Stracomm">
+            <span class="brand-name">Stracomm Global</span>
+          </div>
+
+          <div class="brand-item" title="Forever Dance Center">
+            <img src="assets/logos/forever-dance.png" alt="Forever Dance Center">
+            <span class="brand-name">Forever Dance Center</span>
+          </div>
+
+          <div class="brand-item" title="JB's Beauty World">
+            <img src="assets/logos/jb-beauty.png" alt="JB Beauty World">
+            <span class="brand-name">JB's Beauty World</span>
+          </div>
+
+          <div class="brand-item" title="Kosmicko Cafe & Restaurant">
+            <img src="assets/logos/kosmicko.png" alt="Kosmicko Cafe">
+            <span class="brand-name">Kosmicko Cafe</span>
+          </div>
+
+          <div class="brand-item" title="Albela Event & Marketing">
+            <img src="assets/logos/albela.png" alt="Albela Events">
+            <span class="brand-name">Albela Events</span>
+          </div>
+
+          <div class="brand-item" title="Shubh Celebration">
+            <img src="assets/logos/shubh-celebration.png" alt="Shubh Celebration">
+            <span class="brand-name">Shubh Celebration</span>
+          </div>
+
+          <div class="brand-item" title="Prachi Caterer & Events">
+            <img src="assets/logos/prachi-caterer.png" alt="Prachi Caterer">
+            <span class="brand-name">Prachi Caterer</span>
+          </div>
+
+          <div class="brand-item" title="Manshi Speaks">
+            <img src="assets/logos/manshi-speaks.png" alt="Emcee Manshi Dipak">
+            <span class="brand-name">Manshi Speaks</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================
+         42–48 SECONDS: FINAL CTA — CONTENT THAT STANDS OUT
+         ================================================== -->
+    <section id="final-cta" class="section-final-cta">
+      <!-- Animated Diagonal Sweep Line -->
+      <div class="final-sweep-line" id="final-sweep-line" aria-hidden="true"></div>
+
+      <div class="container">
+
+        <div class="final-cta-box">
+          <div class="final-tag">TIMELINE 00:42 — 00:48 // FINAL CUT</div>
+
+          <div class="kinetic-text-wrap" id="kinetic-cta-phrase">
+            <span class="k-word">IF</span>
+            <span class="k-word">YOU'RE</span>
+            <span class="k-word">LOOKING</span>
+            <span class="k-word">FOR</span>
+            <span class="k-word yellow-huge">CONTENT</span>
+            <span class="k-word yellow-huge">THAT</span>
+            <span class="k-word yellow-huge">STANDS</span>
+            <span class="k-word yellow-huge">OUT</span>
+          </div>
+
+          <div class="final-prompt">
+            <h3 class="final-prompt-title">LET'S WORK TOGETHER</h3>
+            <p class="final-prompt-desc">
+              Creating content that informs, inspires, and makes brands unforgettable. Ready to scale your digital
+              presence or direct your next commercial?
+            </p>
+          </div>
+
+          <!-- Direct CTA Action Triggers -->
+          <div class="final-cta-buttons">
+            <a href="tel:+919122959302" class="btn btn-primary btn-large" data-cursor="CALL NOW">
+              <span class="btn-glow"></span>
+              <span class="btn-text">📞 CALL +91 91229 59302</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+
+            <a href="https://wa.me/919122959302" target="_blank" rel="noopener" class="btn btn-whatsapp btn-large"
+              data-cursor="WHATSAPP">
+              <span class="btn-text">💬 MESSAGE ON WHATSAPP</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </a>
+
+            <a href="#hero" class="btn btn-outline" data-cursor="REPLAY">
+              <span class="btn-text">REPLAY SHOWREEL ↺</span>
+            </a>
+          </div>
+
+          <div class="final-contact-cards">
+            <div class="contact-pill">
+              <span class="pill-label">LOCATION:</span>
+              <span class="pill-val">Patna, Bihar, India</span>
+            </div>
+            <div class="contact-pill">
+              <span class="pill-label">PHONE:</span>
+              <a href="tel:+919122959302" class="pill-val link">+91 91229 59302</a>
+            </div>
+            <div class="contact-pill">
+              <span class="pill-label">ROLE:</span>
+              <span class="pill-val">Social Media Manager · Video Editor</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================
+       FOOTER
+       ================================================== -->
+  <footer class="cinematic-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <div class="footer-logo">MANORANJAN VERMA</div>
+          <p class="footer-copy">© 2026 Manoranjan Verma. All rights reserved. Patna · Bihar · India.</p>
+        </div>
+        <div class="footer-center">
+          <div class="footer-meta-pill">INTERACTIVE CINEMATIC PORTFOLIO // 24 FPS</div>
+        </div>
+        <div class="footer-right">
+          <a href="#hero" class="back-to-top" data-cursor="TOP">
+            <span>BACK TO TOP</span>
+            <span class="arrow-up">↑</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================================================
+       FULLSCREEN CINEMATIC VIDEO & REEL MODAL PLAYER
+       ================================================== -->
+  <div id="video-modal" class="cinematic-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-container">
+
+      <div class="modal-header">
+        <div class="modal-meta">
+          <span class="modal-rec-badge">● LIVE PLAYBACK</span>
+          <span class="modal-client" id="modal-client">DAINIK BHASKAR</span>
+        </div>
+        <div class="modal-header-actions">
+          <button class="modal-mute-btn" id="modal-mute-btn" aria-label="Toggle Sound" title="Mute/Unmute (M)">
+            <svg class="mute-icon-unmuted" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+            <svg class="mute-icon-muted" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+          </button>
+          <button class="modal-close-btn" id="modal-close" aria-label="Close Video Player" data-cursor="CLOSE">
+            <span class="close-text">CLOSE</span>
+            <span class="close-icon">✕</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-media-frame" id="modal-media-frame">
+          <video id="modal-video" class="modal-video" playsinline webkit-playsinline preload="auto" poster="assets/images/posters/master-showreel.png" src="assets/videos/master-showreel.mp4"></video>
+
+          <div class="modal-video-spinner" id="modal-video-spinner" aria-label="Loading video"></div>
+
+          <div class="modal-center-play" id="modal-center-play" aria-label="Play/Pause">
+            <span class="center-play-triangle">▶</span>
+          </div>
+
+          <div class="modal-player-controls" id="modal-player-controls">
+            <button class="modal-play-btn" id="modal-play-btn" aria-label="Play/Pause">
+              <span class="play-icon" id="modal-play-icon">▶</span>
+            </button>
+            <div class="modal-timeline-bar" id="modal-timeline-bar" role="slider" aria-label="Timeline scrubber" tabindex="0">
+              <div class="modal-timeline-fill" id="modal-timeline-fill"></div>
+            </div>
+            <div class="modal-time-count" id="modal-time-count">00:00 / 01:08</div>
+            <button class="modal-fs-btn" id="modal-fs-btn" aria-label="Fullscreen" title="Fullscreen (F)">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="modal-details">
+          <div class="modal-cat-tag" id="modal-cat-tag">BRAND COMMERCIAL</div>
+          <h2 class="modal-title" id="modal-title">Transforming Newsroom Moments into High-Engagement Digital Storytelling</h2>
+          <div class="modal-tags" id="modal-tags">
+            <span>DaVinci Resolve</span>
+            <span>Cinematography</span>
+            <span>Sound Design</span>
+          </div>
+          <div class="modal-actions-bar">
+            <a href="tel:+919122959302" class="btn btn-primary btn-small">BOOK SIMILAR PROJECT</a>
+            <a href="https://wa.me/919122959302" target="_blank" rel="noopener"
+              class="btn btn-outline btn-small">DISCUSS ON WHATSAPP</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GSAP & Lenis Smooth Scroll Libraries via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+  <!-- Core JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
