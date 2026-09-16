@@ -1,10 +1,21 @@
 {
-  "name": "portfolio",
+  "name": "manoranjan-portfolio",
   "version": "1.0.0",
-  "description": "Manoranjan Verma Portfolio",
+  "description": "Manoranjan Verma - Cinematic Portfolio",
   "private": true,
+  "main": "index.html",
   "scripts": {
-    "dev": "python3 -m http.server 3000",
-    "start": "python3 -m http.server 3000"
-  }
+    "dev": "node server.js",
+    "start": "node server.js",
+    "serve": "node server.js",
+    "build": "echo 'Static build ready'"
+  },
+  "keywords": [
+    "portfolio",
+    "cinematography",
+    "video-editor",
+    "social-media"
+  ],
+  "author": "Manoranjan Verma",
+  "license": "ISC"
 }
