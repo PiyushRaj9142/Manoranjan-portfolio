@@ -162,6 +162,20 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Video Streaming server running on port ${PORT}`);
+let currentPort = Number(process.env.PORT) || 3000;
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.warn(`Port ${currentPort} is in use, trying port ${currentPort + 1}...`);
+    currentPort += 1;
+    server.listen(currentPort, '0.0.0.0');
+  } else {
+    console.error('Server error:', err);
+    process.exit(1);
+  }
 });
+
+server.listen(currentPort, '0.0.0.0', () => {
+  console.log(`Server running at http://localhost:${currentPort}`);
+});
+
