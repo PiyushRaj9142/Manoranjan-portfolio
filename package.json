@@ -1,11 +1,10 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "Portfolio website",
-  "main": "server.js",
+  "description": "Manoranjan Verma Portfolio",
+  "private": true,
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
-  },
-  "private": true
+    "dev": "python3 -m http.server 3000",
+    "start": "python3 -m http.server 3000"
+  }
 }
